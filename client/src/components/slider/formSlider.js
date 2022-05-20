@@ -5,7 +5,7 @@ export default function FormSlider({ engine, setEngine, engineArray }) {
   let upper;
   return (
     <div className={sliderStyle.form}>
-      <h2>Select your engine</h2>
+      <h2 className={sliderStyle.selectHeading}>Select your engine</h2>
       <form>
         <select
           id='engine-select'

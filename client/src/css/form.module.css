@@ -5,9 +5,11 @@
   max-width: 700px;
 }
 .form .heading {
+  position: relative;
   font-size: 2rem;
   color: var(--primary-color);
   font-weight: bold;
+  top: 20px;
 }
 
 .form .fieldset {
@@ -50,4 +52,26 @@
   justify-content: space-between;
   right: 0px;
   top: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .form .textarea {
+    width: 90%;
+    margin: 0 10px;
+  }
+
+  .form .heading {
+    margin: 10px 10px;
+    top: 20px;
+  }
+
+  .form .buttonContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .form .button {
+    margin: 5px 0;
+    align-self: center;
+  }
 }

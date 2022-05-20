@@ -72,3 +72,17 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color);
 }
+
+@media only screen and (max-width: 768px) {
+  .response .cardContainer {
+    width: 90%;
+    margin: 0 10px;
+  }
+  .response .none {
+    font-size: 1.1rem;
+  }
+
+  .response .heading {
+    margin: 10px 10px;
+  }
+}
