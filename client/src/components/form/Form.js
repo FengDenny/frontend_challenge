@@ -1,11 +1,33 @@
 import React from "react";
 import formStyle from "../../css/form.module.css";
+import Slider from "../slider/Slider";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 export default function Form(props) {
-  const { prompt, setPrompt, onSubmit, dispatch, formAction } = props;
+  const {
+    prompt,
+    setPrompt,
+    onSubmit,
+    dispatch,
+    formAction,
+    hover,
+    setHover,
+    engine,
+    setEngine,
+    engineArray,
+  } = props;
   return (
     <section className={formStyle.form}>
       <h2 className={formStyle.heading}>{props.heading}</h2>
+      <Slider
+        faIconUp={<FaArrowUp />}
+        faIconDown={<FaArrowDown />}
+        hover={hover}
+        setHover={setHover}
+        engine={engine}
+        setEngine={setEngine}
+        engineArray={engineArray}
+      />
       <form>
         <fieldset className={formStyle.fieldset}>
           <textarea

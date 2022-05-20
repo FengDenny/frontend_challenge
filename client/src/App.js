@@ -10,12 +10,20 @@ import { formAction } from "./redux/store/form-slice";
 
 function App() {
   const [prompt, setPrompt] = useState("");
-  const [result, setResult] = useState("");
+  const [hover, setHover] = useState(false);
+  const [engine, setEngine] = useState("text-curie-001");
+  const engineArray = [
+    "text-curie-001",
+    "text-ada-001",
+    "text-babbage-001",
+    "text-davinci-002",
+  ];
   const dispatch = useDispatch();
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const url = `https://api.openai.com/v1/engines/text-curie-001/completions`;
+    const url = `https://api.openai.com/v1/engines/${engine}/completions`;
+    console.log(engine);
     const data = {
       prompt: prompt,
       temperature: 0,
@@ -25,7 +33,6 @@ function App() {
       presence_penalty: 0.0,
     };
     sendRequest(url, key, data).then((response) => {
-      setResult(response.data.choices[0].text);
       dispatch(
         formAction.addSubmission({
           prompt,
@@ -45,6 +52,11 @@ function App() {
         dispatch={dispatch}
         onSubmit={onSubmit}
         formAction={formAction}
+        hover={hover}
+        setHover={setHover}
+        engine={engine}
+        setEngine={setEngine}
+        engineArray={engineArray}
       />
       <Response />
     </div>
