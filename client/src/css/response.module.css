@@ -1,0 +1,45 @@
+.response {
+  position: relative;
+  padding: 20px 0 30px;
+  margin: 5rem auto;
+  max-width: 700px;
+}
+
+.response .heading {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.response .none {
+  color: var(--secondary-color);
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 200;
+  padding: 20px 1px;
+  z-index: 100;
+}
+
+.response .result {
+  color: var(--primary-color);
+  position: relative;
+  font-size: 1rem;
+  font-weight: 200;
+  padding: 10px 10px;
+  z-index: 100;
+}
+
+.response .card {
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  padding: 10px 0;
+  margin-top: 10px;
+  z-index: -1;
+}
+
+.response .span {
+  color: var(--white);
+  padding-left: 3px;
+}
