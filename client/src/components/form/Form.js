@@ -15,6 +15,7 @@ export default function Form(props) {
     engine,
     setEngine,
     engineArray,
+    submit,
   } = props;
   return (
     <section className={formStyle.form}>
@@ -42,16 +43,18 @@ export default function Form(props) {
         <div className={formStyle.buttonContainer}>
           <button
             className={formStyle.button}
+            disabled={!formAction}
             onClick={() => dispatch(formAction.clearSubmission())}
           >
             Clear responses
           </button>
           <button
+            type='submit'
             className={formStyle.button}
             disabled={!prompt}
             onClick={(e) => onSubmit(e)}
           >
-            Submit
+            {submit ? "Submitting..." : "Submit"}
           </button>
         </div>
       </form>

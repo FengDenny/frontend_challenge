@@ -11,6 +11,7 @@ import { formAction } from "./redux/store/form-slice";
 function App() {
   const [prompt, setPrompt] = useState("");
   const [hover, setHover] = useState(false);
+  const [submit, setSubmit] = useState(false);
   const [engine, setEngine] = useState("text-curie-001");
   const engineArray = [
     "text-curie-001",
@@ -22,8 +23,8 @@ function App() {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    setSubmit(true);
     const url = `https://api.openai.com/v1/engines/${engine}/completions`;
-    console.log(engine);
     const data = {
       prompt: prompt,
       temperature: 0,
@@ -32,14 +33,21 @@ function App() {
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
     };
-    sendRequest(url, key, data).then((response) => {
-      dispatch(
-        formAction.addSubmission({
-          prompt,
-          result: response.data.choices[0].text,
-        })
-      );
-    });
+    try {
+      sendRequest(url, key, data).then((response) => {
+        setPrompt("");
+        setSubmit(false);
+        dispatch(
+          formAction.addSubmission({
+            prompt,
+            result: response.data.choices[0].text,
+          })
+        );
+      });
+    } catch (err) {
+      console.log(err);
+      setSubmit(false);
+    }
   };
   return (
     <div>
@@ -57,6 +65,7 @@ function App() {
         engine={engine}
         setEngine={setEngine}
         engineArray={engineArray}
+        submit={submit}
       />
       <Response />
     </div>
