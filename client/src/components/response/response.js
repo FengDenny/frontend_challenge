@@ -8,26 +8,26 @@ export default function Response() {
   return (
     <div className={responseStyle.response}>
       <h2 className={responseStyle.heading}>Response</h2>
-      {submission.length === 0 ? (
-        <div>
+      <div className={responseStyle.cardContainer}>
+        {submission.length === 0 ? (
           <p className={responseStyle.none}>No submissions has been made</p>
-        </div>
-      ) : (
-        submission
-          .map((item) => (
-            <div className={responseStyle.card} key={item}>
-              <p className={responseStyle.result}>
-                Prompt:
-                <span className={responseStyle.span}> {item.prompt}</span>
-              </p>
-              <p className={responseStyle.result}>
-                Response:
-                <span className={responseStyle.span}> {item.result}</span>
-              </p>
-            </div>
-          ))
-          .reverse()
-      )}
+        ) : (
+          submission
+            .map((item) => (
+              <div className={responseStyle.card} key={item}>
+                <p className={responseStyle.result}>
+                  Prompt:
+                  <span className={responseStyle.span}> {item.prompt}</span>
+                </p>
+                <p className={responseStyle.result}>
+                  Response:
+                  <span className={responseStyle.span}> {item.result}</span>
+                </p>
+              </div>
+            ))
+            .reverse()
+        )}
+      </div>
     </div>
   );
 }

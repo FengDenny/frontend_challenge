@@ -12,12 +12,13 @@
 }
 
 .response .none {
-  color: var(--secondary-color);
+  color: var(--white);
   position: relative;
   font-size: 1.4rem;
   font-weight: 200;
-  padding: 20px 1px;
+  padding: 90px;
   z-index: 100;
+  text-align: center;
 }
 
 .response .result {
@@ -30,16 +31,44 @@
 }
 
 .response .card {
-  background-color: var(--secondary-color);
-  width: 100%;
+  background-color: var(--bg-color);
+  width: 80%;
   height: auto;
   border-radius: 5px;
   padding: 10px 0;
   margin-top: 10px;
   z-index: -1;
+  margin: 10px auto;
 }
 
 .response .span {
-  color: var(--white);
+  color: var(--secondary-color);
   padding-left: 3px;
+}
+
+.response .cardContainer {
+  overflow: scroll;
+  overflow-x: hidden;
+  color: var(--bg-color);
+  box-shadow: var(--box-shadow);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  height: 15rem;
+  margin-top: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
 }
