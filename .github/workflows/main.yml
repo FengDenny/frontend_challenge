@@ -19,6 +19,7 @@ jobs:
           npm install
           npm run-script build
         env:
+          CI: false
           REACT_APP_OPENAI_API_KEY: ${{ secrets.REACT_APP_OPENAI_API_KEY }}
 
       - name: Deploy
