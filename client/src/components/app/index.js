@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import Navbar from "./components/navbar/Navbar";
-import Form from "./components/form/Form";
-import Response from "./components/response/response";
-import "./css/globals.css";
-import { sendRequest } from "./api/openAiApi";
-import { key } from "./api/openAiKey";
+import Navbar from "../navbar/Navbar";
+import Form from "../form/Form";
+import Response from "../response/response";
+import "../../css/globals.css";
+import { sendRequest } from "../../api/openAiApi";
+import { key } from "../../api/openAiKey";
 import { useDispatch } from "react-redux";
-import { formAction } from "./redux/store/form-slice";
+import { formAction } from "../../redux/store/form-slice";
 
 function App() {
   const [prompt, setPrompt] = useState("");
