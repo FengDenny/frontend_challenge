@@ -2,7 +2,7 @@ import React from "react";
 import responseStyle from "../../css/response.module.css";
 import { useSelector } from "react-redux";
 
-export default function Response() {
+export default function Response({ engine }) {
   const submissions = useSelector((state) => state.form);
   const { submission } = submissions;
   return (
@@ -15,6 +15,10 @@ export default function Response() {
           submission
             .map((item) => (
               <div className={responseStyle.card} key={item}>
+                <p className={responseStyle.result}>
+                  Engine:
+                  <span className={responseStyle.span}> {engine}</span>
+                </p>
                 <p className={responseStyle.result}>
                   Prompt:
                   <span className={responseStyle.span}> {item.prompt}</span>
