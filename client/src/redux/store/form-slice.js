@@ -11,6 +11,7 @@ export const formSlice = createSlice({
       state.submission.push({
         prompt: newSubmission.prompt,
         result: newSubmission.result,
+        engine: newSubmission.engine,
       });
     },
     clearSubmission(state, action) {

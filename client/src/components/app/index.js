@@ -41,6 +41,7 @@ function App() {
           formAction.addSubmission({
             prompt,
             result: response.data.choices[0].text,
+            engine,
           })
         );
       });

@@ -17,7 +17,7 @@ export default function Response({ engine }) {
               <div className={responseStyle.card} key={item}>
                 <p className={responseStyle.result}>
                   Engine:
-                  <span className={responseStyle.span}> {engine}</span>
+                  <span className={responseStyle.span}> {item.engine}</span>
                 </p>
                 <p className={responseStyle.result}>
                   Prompt:
